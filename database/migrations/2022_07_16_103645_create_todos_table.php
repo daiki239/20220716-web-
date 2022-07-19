@@ -13,10 +13,9 @@ class CreateTodosTable extends Migration
     */
    public function up()
    {
-       Schema::create('todos', function (Blueprint $table) {
-           $table->id();
-           $table->string('text');
-           $table->timestamps();
+       Schema::create('authors', function (Blueprint $table) {
+            $table->increments('id');
+            $table->timestamps();
        });
    }
 
@@ -27,6 +26,6 @@ class CreateTodosTable extends Migration
     */
    public function down()
    {
-       Schema::dropIfExists('todos');
+       Schema::dropIfExists('authors');
    }
 }

@@ -15,7 +15,7 @@
     <p>入力に問題があります</p>
   @endif
   <form action="/task" method="POST">
-    {{csrf_field()}}
+
     <table>
       @csrf
       @error('name')
@@ -32,7 +32,7 @@
           <input class="button-add" type="submit" value="追加">
         </td>
       </tr>
-      
+</form>
      <tr>
             <th>作成日</th>
             <th>タスク名</th>
@@ -47,11 +47,12 @@
             <form action="" method="post"></form>
               <input type="hidden" name="_token" value="">              <td>
                 <input type="text" class="input-update" value="" name="content">
+                </form>
               </td>
                {{--
               <td>
                 <button class="button-update">更新</button>
-                <form action="" method="post">
+                <form action="" method="post"> </form> 
               </td>
             <td>
                 <input type="hidden" name="_token" value="">                <button class="button-delete">削除</button>
@@ -66,8 +67,8 @@
       </tr>
     </table>
   
-  </form>
+  
 
-  </form>
+ 
 </body>
 </html>
