@@ -1,11 +1,12 @@
 <?php
-
 namespace App\Http\Controllers;
 
+use App\Models\todo;
 use Illuminate\Http\Request;
-use App\Http\Requests\ClientRequest;
+use App\Http\Requests\todoRequest;
 
 class todoController extends Controller
+
 {
     public function index(Request $request)
     {
@@ -21,15 +22,10 @@ class todoController extends Controller
         return view('todo_create');
     }
     public function create(Request $request)
-    {
-        $todo = new Todo();
-        $todo->task_name = $request->task_name;
-        $todo->task_description = $request->task_description;
-        $todo->assign_person_name = $request->assign_person_name;
-        $todo->estimate_hour = $request->estimate_hour;
-        $todo->save();
-
+    { $form = $request->all();
+        todo::create($form);
         return redirect('/');
     }
 
 }
+
